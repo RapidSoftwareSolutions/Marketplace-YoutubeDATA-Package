@@ -62,7 +62,7 @@ Add YouTube features to your application, including the ability to upload videos
 ___
 ## Activity resource
 
-```json
+```
 {
   "kind": "youtube#activity",
   "etag": etag,
@@ -193,7 +193,7 @@ Posts a bulletin for a specific channel. (The user submitting the request must b
 ___
 ## Caption resource
 
-```json
+```
 {
   "kind": "youtube#caption",
   "etag": etag,
@@ -277,7 +277,7 @@ Deletes a specified caption track.
 
 ___
 ## ChannelBanners resource:
-```json
+```
 {
   "kind": "youtube#channelBannerResource",
   "etag": etag,
@@ -466,7 +466,7 @@ Updates a channel's metadata.
 
 ___
 ## ChannelSection resource
-```json
+```
 {
   "kind": "youtube#channelSection",
   "etag": etag,
@@ -562,7 +562,7 @@ Deletes a channel section.
 ___
 ## Comments resources
 
-```json
+```
 {
   "kind": "youtube#comment",
   "etag": etag,
@@ -656,7 +656,7 @@ Deletes a comment.
 
 ___
 ## CommentThread resource
-```json
+```
 {
   "kind": "youtube#commentThread",
   "etag": etag,
@@ -719,7 +719,7 @@ Modifies the top-level comment in a comment thread.
 ___
 ## GuideCategories resource
 
-```json
+```
 {
   "kind": "youtube#guideCategory",
   "etag": etag,
@@ -745,7 +745,7 @@ Returns a list of categories that can be associated with YouTube channels.
 
 ___
 ## I18nLanguages resource
-```json
+```
 {
   "kind": "youtube#i18nLanguage",
   "etag": etag,
@@ -771,7 +771,7 @@ Returns a list of application languages that the YouTube website supports.
 ___
 ## I18nRegions resource
 
-```json
+```
 {
   "kind": "youtube#i18nRegion",
   "etag": etag,
@@ -797,7 +797,7 @@ Returns a list of content regions that the YouTube website supports.
 ___
 ## PlaylistItem resource
 
-```json
+```
 {
   "kind": "youtube#playlistItem",
   "etag": etag,
@@ -882,7 +882,7 @@ Deletes a playlist.
 
 ___
 ## Playlist resource
-```json
+```
 {
   "kind": "youtube#playlist",
   "etag": etag,
@@ -980,7 +980,7 @@ Deletes a playlist.
 ___
 ## SearchResult resource
 
-```json
+```
 {
   "kind": "youtube#searchResult",
   "etag": etag,
@@ -1048,7 +1048,7 @@ Method description
 
 ___
 ## Subscription resource 
-```json
+```
 {
   "kind": "youtube#subscription",
   "etag": etag,
@@ -1133,7 +1133,7 @@ Deletes a subscription.
 
 ___
 ## Thumbnail resource
-```json
+```
 {
   "default": {
     "url": string,
@@ -1177,7 +1177,7 @@ Uploads a custom video thumbnail to YouTube and sets it for a video.
 
 ___
 ## VideoAbuseReportReason resource 
-```json
+```
 {
   "kind": "youtube#videoAbuseReportReason",
   "etag": etag,
@@ -1207,7 +1207,7 @@ Retrieve a list of reasons that can be used to report abusive videos.
 
 ___
 ## VideoCategory resource 
-```json
+```
 {
   "kind": "youtube#videoCategory",
   "etag": etag,
@@ -1236,7 +1236,7 @@ Returns a list of categories that can be associated with YouTube videos.
 ___
 ## Watermark resource 
 
-```json
+```
 {
   "timing": {
     "type": string,
@@ -1277,7 +1277,7 @@ Deletes a channel's watermark image.
 
 ___
 ## Video resource
-```json 
+``` 
 {
   "kind": "youtube#video",
   "etag": etag,
