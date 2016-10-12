@@ -837,6 +837,7 @@
 		}]
 	}, {
 		"name": "deletePlaylistItem",
+		"description": "Deletes a playlist.",
 		"args": [{
 			"name": "apiKey",
 			"type": "credentials",
@@ -1218,7 +1219,7 @@
 		}]
 	}, {
 		"name": "setThumbnail",
-		"info": "Uploads a custom video thumbnail to YouTube and sets it for a video.",
+		"description": "Uploads a custom video thumbnail to YouTube and sets it for a video.",
 		"args": [{
 			"name": "apiKey",
 			"type": "credentials",
