@@ -1009,7 +1009,7 @@ ___
 
 <a name="getSearchResults"/>
 ## YoutubeDataApi.getSearchResults
-Method description
+Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
@@ -1565,7 +1565,7 @@ Add a like or dislike rating to a video or remove a rating from a video.
 
 <a name="getVideosRating"/>
 ## YoutubeDataApi.getVideosRating
-Method description
+Retrieves the ratings that the authorized user gave to a list of specified videos.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
@@ -1575,7 +1575,7 @@ Method description
 
 <a name="createAbuseVideoContentReport"/>
 ## YoutubeDataApi.createAbuseVideoContentReport
-Method description
+Reports a video for containing abusive content.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
@@ -1589,7 +1589,7 @@ Method description
 
 <a name="deleteVideo"/>
 ## YoutubeDataApi.deleteVideo
-Method description
+Deletes a YouTube video.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
