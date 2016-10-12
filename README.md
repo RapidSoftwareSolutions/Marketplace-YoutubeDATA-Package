@@ -4,8 +4,13 @@ Add YouTube features to your application, including the ability to upload videos
 * Credentials: accessToken
 
 ## How to get credentials: 
-0. Item one 
-1. Item two
+The YouTube Data API supports the OAuth 2.0 protocol for authorizing access to private user data. The list below explains some core OAuth 2.0 concepts:
+
++ When a user first attempts to use functionality in your application that requires the user to be logged in to a Google Account or YouTube account, your application initiates the OAuth 2.0 authorization process.
++ Your application directs the user to Google's authorization server. The link to that page specifies the `scope` of access that your application is requesting for the user's account. The `scope` specifies the resources that your application can retrieve, insert, update, or delete when acting as the authenticated user.
++ If the user consents to authorize your application to access those resources, Google returns a token to your application. Depending on your application's type, it either validates the token or exchanges it for a different type of token.
+
+For example, a server-side web application exchanges the returned token for an `access_token` and a refresh token. The `access_token` lets the application authorize requests on the user's behalf, and the refresh token lets the application retrieve a new access token when the original access token expires.
 
 ## TOC: 
 * [getActivities](#getActivities)
