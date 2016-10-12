@@ -1,7 +1,7 @@
 # YoutubeDataApi Package
 Add YouTube features to your application, including the ability to upload videos, create and manage playlists, and more.
 * Domain: youtube.com
-* Credentials: apiKey
+* Credentials: accessToken
 
 ## How to get credentials: 
 0. Item one 
@@ -169,7 +169,7 @@ Returns a list of channel activity events that match the request criteria. For e
 
 | Field          | Type       | Description
 |----------------|------------|----------
-| apiKey         | credentials| Required: Access token obtained from Google.com
+| accessToken         | credentials| Required: Access token obtained from Google.com
 | part           | String     | The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, snippet
 | channelId      | String     | The channelId parameter specifies a unique YouTube channel ID. The API will then return a list of that channel's activities.
 | home           | Boolean    | For requests that set this parameter, the API response contains items similar to those that a logged-out user would see on the YouTube home page. Note that this parameter can only be used in a properly authorized request. (deprecated)
@@ -186,7 +186,7 @@ Posts a bulletin for a specific channel. (The user submitting the request must b
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, snippet
 | resource| JSON       | An activity resource.
 
@@ -223,7 +223,7 @@ Retrieve a list of caption tracks that are associated with a specified video. No
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet
 | videoId               | String     | The videoId parameter specifies the YouTube video ID of the video for which the API should return caption tracks.
 | id                    | String     | The id parameter specifies a comma-separated list of IDs that identify the caption resources that should be retrieved. Each ID must identify a caption track associated with the specified video.
@@ -235,7 +235,7 @@ Uploads a caption track.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | sync                  | Boolean    | The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will disregard any time codes that are in the uploaded caption file and generate new time codes for the captions. You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
@@ -247,7 +247,7 @@ Updates a caption track. When updating a caption track, you can change the track
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | sync                  | Boolean    | The sync parameter indicates whether YouTube should automatically synchronize the caption file with the audio track of the video. If you set the value to true, YouTube will disregard any time codes that are in the uploaded caption file and generate new time codes for the captions. You should set the sync parameter to true if you are uploading a transcript, which has no time codes, or if you suspect the time codes in your file are incorrect and want YouTube to try to fix them.
@@ -259,7 +259,7 @@ Downloads a caption track. The caption track is returned in its original format 
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | id                    | String     | The id parameter identifies the caption track that is being retrieved. The value is a caption track ID as identified by the id property in a caption resource.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | tfmt                  | String     | The tfmt parameter specifies that the caption track should be returned in a specific format. If the parameter is not included in the request, the track is returned in its original format. Supported values are: `sbv` – SubViewer subtitle; `scc` – Scenarist Closed Caption format; `srt` – SubRip subtitle; `ttml` – Timed Text Markup Language caption; `vtt` – Web Video Text Tracks caption
@@ -271,7 +271,7 @@ Deletes a specified caption track.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | id                    | String     | The id parameter identifies the caption track that is being deleted. The value is a caption track ID as identified by the id property in a caption resource.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
@@ -292,7 +292,7 @@ Upload a channel banner image to YouTube.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | image                 | String     | Image url.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
@@ -452,7 +452,7 @@ Returns a collection of zero or more channel resources that match the request cr
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 
 <a name="updateChannel"/>
 ## YoutubeDataApi.updateChannel
@@ -460,7 +460,7 @@ Updates a channel's metadata.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. The API currently only allows the parameter value to be set to either brandingSettings, invideoPromotion, or localizations. (You can only update any one of those parts with a single request.) Note that this method overrides the existing values for all of the mutable properties that are contained in the part that the parameter value specifies.
 | onBehalfOfContentOwner| String     | This parameter can only be used in a properly authorized request. The onBehalfOfContentOwner parameter indicates that the authenticated user is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with needs to be linked to the specified YouTube content owner.
 
@@ -516,7 +516,7 @@ Returns a list of channelSection resources that match the API request criteria.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting
 | channelId             | String     | The channelId parameter specifies a YouTube channel ID. If a request specifies a value for this parameter, the API will only return the specified channel's sections.
 | id                    | String     | The id parameter specifies a comma-separated list of IDs that uniquely identify the channelSection resources that are being retrieved. In a channelSection resource, the id property specifies the section's ID.
@@ -530,7 +530,7 @@ Adds a channel section to the authenticated user's channel.
 
 | Field                        | Type       | Description
 |------------------------------|------------|----------
-| apiKey                       | credentials| Required: Access token obtained from Google.com
+| accessToken                       | credentials| Required: Access token obtained from Google.com
 | part                         | String     | The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting
 | onBehalfOfContentOwner       | String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | onBehalfOfContentOwnerChannel| String     | The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies.
@@ -542,7 +542,7 @@ Updates a channel section.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | resource              | String     | An channelSection resource.
@@ -553,7 +553,7 @@ Deletes a channel section.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | id                    | String     | The id parameter specifies the ID that uniquely identifies the channel section that is being deleted. In a channelSection resource, the id property specifies the section's ID.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
@@ -594,7 +594,7 @@ Returns a list of comments that match the API request parameters.
 
 | Field     | Type       | Description
 |-----------|------------|----------
-| apiKey    | credentials| Required: Access token obtained from Google.com
+| accessToken    | credentials| Required: Access token obtained from Google.com
 | part      | String     | The part parameter specifies a comma-separated list of one or more comment resource properties that the API response will include. The list below contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet
 | id        | String     | The id parameter specifies a comma-separated list of comment IDs for the resources that are being retrieved. In a comment resource, the id property specifies the comment's ID.
 | parentId  | String     | The parentId parameter specifies the ID of the comment for which replies should be retrieved.
@@ -608,7 +608,7 @@ Creates a reply to an existing comment.
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `id`, `snippet`
 | resource| JSON       | An Comment resource
 
@@ -618,7 +618,7 @@ Modifies a comment.
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `id`, `snippet`
 | resource| JSON       | An Comment resource
 
@@ -628,7 +628,7 @@ Expresses the caller's opinion that one or more comments should be flagged as sp
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | id    | String     | The id parameter specifies a comma-separated list of IDs of comments that the caller believes should be classified as spam.
 
 <a name="setCommentsModerationStatus"/>
@@ -637,7 +637,7 @@ Sets the moderation status of one or more comments. The API request must be auth
 
 | Field           | Type       | Description
 |-----------------|------------|----------
-| apiKey          | credentials| Required: Access token obtained from Google.com
+| accessToken          | credentials| Required: Access token obtained from Google.com
 | id              | String     | The id parameter specifies a comma-separated list of IDs of comments that the caller believes should be classified as spam.
 | moderationStatus| String     | Identifies the new moderation status of the specified comments. Acceptable values are: `heldForReview` – Marks a comment as awaiting review by a moderator. `published` – Clears a comment for public display. `rejected` – Rejects a comment as being unfit for display. This action also effectively hides all replies to the rejected comment.
 | banAuthor       | Boolean    | The banAuthor parameter lets you indicate that you want to automatically reject any additional comments written by the comment's author. Set the parameter value to true to ban the author.
@@ -648,7 +648,7 @@ Deletes a comment.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | id    | String     | The id parameter specifies the comment ID for the resource that is being deleted.
 
 
@@ -681,7 +681,7 @@ Returns a list of comment threads that match the API request parameters.
 
 | Field                       | Type       | Description
 |-----------------------------|------------|----------
-| apiKey                      | credentials| Required: Access token obtained from Google.com
+| accessToken                      | credentials| Required: Access token obtained from Google.com
 | part                        | String     | The part parameter specifies a comma-separated list of one or more commentThread resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, replies, snippet
 | allThreadsRelatedToChannelId| String     | The allThreadsRelatedToChannelId parameter instructs the API to return all comment threads associated with the specified channel. The response can include comments about the channel or about the channel's videos.
 | channelId                   | String     | The channelId parameter instructs the API to return comment threads containing comments about the specified channel. (The response will not include comments left on videos that the channel uploaded.)
@@ -700,7 +700,7 @@ Creates a new top-level comment.
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units. The list below contains the part names that you can include in the parameter value and the quota cost for each part:`id`,`replies`,`snippet`.
 | resource| String     | An CommentThread resource.
 
@@ -710,7 +710,7 @@ Modifies the top-level comment in a comment thread.
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter identifies the properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units. The list below contains the part names that you can include in the parameter value and the quota cost for each part:`id`,`replies`,`snippet`.
 | resource| String     | An CommentThread resource.
 
@@ -735,7 +735,7 @@ Returns a list of categories that can be associated with YouTube channels.
 
 | Field     | Type       | Description
 |-----------|------------|----------
-| apiKey    | credentials| Required: Access token obtained from Google.com
+| accessToken    | credentials| Required: Access token obtained from Google.com
 | part      | String     | The part parameter specifies the guideCategory resource properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
 | id        | String     | The id parameter specifies a comma-separated list of the YouTube channel category ID(s) for the resource(s) that are being retrieved. In a guideCategory resource, the id property specifies the YouTube channel category ID.
 | regionCode| String     | The regionCode parameter instructs the API to return the list of guide categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
@@ -762,7 +762,7 @@ Returns a list of application languages that the YouTube website supports.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | part  | String     | The part parameter specifies the i18nLanguage resource properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 1 unit.
 | hl    | String     | The hl parameter specifies the language that should be used for text values in the API response. The default value is en_US.
 
@@ -788,7 +788,7 @@ Returns a list of content regions that the YouTube website supports.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | part  | String     | The part parameter specifies the i18nRegion resource properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 1 unit.
 | h1    | String     | The hl parameter specifies the language that should be used for text values in the API response. The default value is en_US.
 
@@ -839,7 +839,7 @@ Returns a collection of playlist items that match the API request parameters.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`
 | id                    | String     | The id parameter specifies a comma-separated list of one or more unique playlist item IDs.
 | playlistId            | String     | The playlistId parameter specifies the unique ID of the playlist for which you want to retrieve playlist items. Note that even though this is an optional parameter, every request to retrieve playlist items must specify a value for either the id parameter or the playlistId parameter.
@@ -854,7 +854,7 @@ Adds a resource to a playlist.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | resource              | JSON       | A playlistItem resource.
@@ -865,7 +865,7 @@ Modifies a playlist item. For example, you could update the item's position in t
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that this method will override the existing values for all of the mutable properties that are contained in any parts that the parameter value specifies. For example, a playlist item can specify a start time and end time, which identify the times portion of the video that should play when users watch the video in the playlist. If your request is updating a playlist item that sets these values, and the request's part parameter value includes the contentDetails part, the playlist item's start and end times will be updated to whatever value the request body specifies. If the request body does not specify values, the existing start and end times will be removed and replaced with the default settings. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`
 | resource| JSON       | A playlistItem resource.
 
@@ -875,7 +875,7 @@ Deletes a playlist.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | id    | String     | The id parameter specifies the YouTube playlist item ID for the playlist item that is being deleted. In a playlistItem resource, the id property specifies the playlist item's ID.
 
 ___
@@ -932,7 +932,7 @@ Returns a collection of playlists that match the API request parameters. For exa
 
 | Field                        | Type       | Description
 |------------------------------|------------|----------
-| apiKey                       | credentials| Required: Access token obtained from Google.com
+| accessToken                       | credentials| Required: Access token obtained from Google.com
 | part                         | String     | The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,
 | channelId                    | String     | This value indicates that the API should only return the specified channel's playlists.
 | id                           | String     | The id parameter specifies a comma-separated list of the YouTube playlist ID(s) for the resource(s) that are being retrieved. In a playlist resource, the id property specifies the playlist's YouTube playlist ID.
@@ -948,7 +948,7 @@ Creates a playlist.
 
 | Field                        | Type       | Description
 |------------------------------|------------|----------
-| apiKey                       | credentials| Required: Access token obtained from Google.com
+| accessToken                       | credentials| Required: Access token obtained from Google.com
 | part                         | String     | The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,
 | onBehalfOfContentOwner       | String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | onBehalfOfContentOwnerChannel| String     | The onBehalfOfContentOwnerChannel parameter specifies the YouTube channel ID of the channel to which a video is being added. This parameter is required when a request specifies a value for the onBehalfOfContentOwner parameter, and it can only be used in conjunction with that parameter. In addition, the request must be authorized using a CMS account that is linked to the content owner that the onBehalfOfContentOwner parameter specifies. Finally, the channel that the onBehalfOfContentOwnerChannel parameter value specifies must be linked to the content owner that the onBehalfOfContentOwner parameter specifies.
@@ -960,7 +960,7 @@ Modifies a playlist. For example, you could change a playlist's title, descripti
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | resource              | JSON       | A playlist resource.
@@ -971,7 +971,7 @@ Deletes a playlist.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | id                    | String     | The id parameter specifies the YouTube playlist ID for the playlist that is being deleted. In a playlist resource, the id property specifies the playlist's ID.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
@@ -1013,7 +1013,7 @@ Returns a collection of search results that match the query parameters specified
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. Set the parameter value to snippet.
 | forContentOwner       | Boolean    | The forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated using a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.
 | forDeveloper          | Boolean    | This parameter can only be used in a properly authorized request. The forDeveloper parameter restricts the search to only retrieve videos uploaded via the developer's application or website. The API server uses the request's authorization credentials to identify the developer. The forDeveloper parameter can be used in conjunction with optional search parameters like the q parameter.
@@ -1096,7 +1096,7 @@ Returns a collection of search results that match the query parameters specified
 
 | Field                        | Type       | Description
 |------------------------------|------------|----------
-| apiKey                       | credentials| Required: Access token obtained from Google.com
+| accessToken                       | credentials| Required: Access token obtained from Google.com
 | part                         | String     | The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `subscriberSnippet`
 | channelId                    | String     | The channelId parameter specifies a YouTube channel ID. The API will only return that channel's subscriptions.
 | id                           | String     | The id parameter specifies a comma-separated list of the YouTube subscription ID(s) for the resource(s) that are being retrieved. In a subscription resource, the id property specifies the YouTube subscription ID.
@@ -1116,7 +1116,7 @@ Adds a subscription for the authenticated user's channel.
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `subscriberSnippet`
 | resource| JSON       | A subscription resource.
 
@@ -1126,7 +1126,7 @@ Deletes a subscription.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | id    | string     | The id parameter specifies the YouTube subscription ID for the resource that is being deleted. In a subscription resource, the id property specifies the YouTube subscription ID.
 
 ___
@@ -1168,7 +1168,7 @@ Uploads a custom video thumbnail to YouTube and sets it for a video.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | videoId               | String     | The videoId parameter specifies a YouTube video ID for which the custom video thumbnail is being provided.
 | image                 | String     | Image url.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The actual CMS account that the user authenticates with must be linked to the specified YouTube content owner.
@@ -1199,7 +1199,7 @@ Retrieve a list of reasons that can be used to report abusive videos.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | part  | String     | The part parameter specifies the videoCategory resource parts that the API response will include. Supported values are id and snippet. The snippet part has a quota cost of 2 units.
 | hl    | String     | The hl parameter specifies the language that should be used for text values in the API response. The default value is en_US.
 
@@ -1225,7 +1225,7 @@ Returns a list of categories that can be associated with YouTube videos.
 
 | Field     | Type       | Description
 |-----------|------------|----------
-| apiKey    | credentials| Required: Access token obtained from Google.com
+| accessToken    | credentials| Required: Access token obtained from Google.com
 | part      | String     | The part parameter specifies the videoCategory resource properties that the API response will include. Set the parameter value to snippet. The snippet part has a quota cost of 2 units.
 | id        | String     | The id parameter specifies a comma-separated list of video category IDs for the resources that you are retrieving.
 | regionCode| String     | The regionCode parameter instructs the API to return the list of video categories available in the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.
@@ -1258,7 +1258,7 @@ Uploads a watermark image to YouTube and sets it for a channel.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | channelId             | String     | The channelId parameter specifies the YouTube channel ID for which the watermark is being provided.
 | image                 | String     | Image url.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
@@ -1269,7 +1269,7 @@ Deletes a channel's watermark image.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 | channelId             | String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
@@ -1516,7 +1516,7 @@ Returns a list of videos that match the API request parameters.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | part                  | String     | The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include.If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`,`fileDetails`,`id`,`liveStreamingDetails`,`localizations`,`player`,`processingDetails`,`recordingDetails`,`snippet`,`statistics`,`status`,`suggestions`,`topicDetails`
 | chart                 | String     | The chart parameter identifies the chart that you want to retrieve.
 | id                    | String     | The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) that are being retrieved. In a video resource, the id property specifies the video's ID.
@@ -1534,7 +1534,7 @@ Uploads a video to YouTube and optionally sets the video's metadata.
 
 | Field                        | Type       | Description
 |------------------------------|------------|----------
-| apiKey                       | credentials| Required: Access token obtained from Google.com
+| accessToken                       | credentials| Required: Access token obtained from Google.com
 | part                         | String     | The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`,`fileDetails`,`id`,`liveStreamingDetails`,`localizations`,`player`,`processingDetails`,`recordingDetails`, `snippet`, `statistics`, `status`, `suggestions`, `topicDetails`
 | autoLevels                   | Boolean    | The autoLevels parameter indicates whether YouTube should automatically enhance the video's lighting and color.
 | notifySubscribers            | String     | The notifySubscribers parameter indicates whether YouTube should send a notification about the new video to users who subscribe to the video's channel. A parameter value of True indicates that subscribers will be notified of newly uploaded videos. However, a channel owner who is uploading many videos might prefer to set the value to False to avoid sending a notification about each new video to the channel's subscribers. The default value is True.
@@ -1549,7 +1549,7 @@ Updates a video's metadata.
 
 | Field   | Type       | Description
 |---------|------------|----------
-| apiKey  | credentials| Required: Access token obtained from Google.com
+| accessToken  | credentials| Required: Access token obtained from Google.com
 | part    | String     | The part parameter serves two purposes in this operation. It identifies the properties that the write operation will set as well as the properties that the API response will include. Note that not all parts contain properties that can be set when inserting or updating a video. For example, the statistics object encapsulates statistics that YouTube calculates for a video and does not contain values that you can set or modify. If the parameter value specifies a part that does not contain mutable values, that part will still be included in the API response. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`,`fileDetails`,`id`,`liveStreamingDetails`,`localizations`,`player`,`processingDetails`,`recordingDetails`, `snippet`, `statistics`, `status`, `suggestions`, `topicDetails`
 | resource| JSON       | A video resource.
 
@@ -1559,7 +1559,7 @@ Add a like or dislike rating to a video or remove a rating from a video.
 
 | Field | Type       | Description
 |-------|------------|----------
-| apiKey| credentials| Required: Access token obtained from Google.com
+| accessToken| credentials| Required: Access token obtained from Google.com
 | id    | String     | The id parameter specifies the YouTube video ID of the video that is being rated or having its rating removed.
 | rating| String     | `dislike`, `like` or `none`
 
@@ -1569,7 +1569,7 @@ Retrieves the ratings that the authorized user gave to a list of specified video
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | id                    | String     | The id parameter specifies a comma-separated list of the YouTube video ID(s) for the resource(s) for which you are retrieving rating data. In a video resource, the id property specifies the video's ID.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 
@@ -1579,7 +1579,7 @@ Reports a video for containing abusive content.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | videoId               | String     | Video id.
 | reasonId              | String     | Reason id.
 | secondaryReasonId     | String     | Secondary Reason id.
@@ -1593,7 +1593,7 @@ Deletes a YouTube video.
 
 | Field                 | Type       | Description
 |-----------------------|------------|----------
-| apiKey                | credentials| Required: Access token obtained from Google.com
+| accessToken                | credentials| Required: Access token obtained from Google.com
 | id                    | String     | The id parameter specifies the YouTube video ID for the resource that is being deleted. In a video resource, the id property specifies the video's ID.
 | onBehalfOfContentOwner| String     | The onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.
 

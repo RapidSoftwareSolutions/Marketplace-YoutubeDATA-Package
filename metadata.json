@@ -6,13 +6,13 @@
 	"repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-YoutubeDATA-Package",
 	"accounts": {
 		"domain": "youtube.com",
-		"credentials": ["apiKey"]
+		"credentials": ["accessToken"]
 	},
 	"blocks": [{
 		"name": "getActivities",
 		"description": "Returns a list of channel activity events that match the request criteria. For example, you can retrieve events associated with a particular channel or with the user's own channel. ",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -63,7 +63,7 @@
 		"name": "createActivity",
 		"description": "Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel's behalf.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -86,7 +86,7 @@
 		"name": "getCaptions",
 		"description": "Retrieve a list of caption tracks that are associated with a specified video. Note that the API response does not contain the actual captions and that the captions.download method provides the ability to retrieve a caption track. Try it now.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -117,7 +117,7 @@
 		"name": "createCaption",
 		"description": "Uploads a caption track.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -148,7 +148,7 @@
 		"name": "updateCaption",
 		"description": "Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -179,7 +179,7 @@
 		"name": "downloadCaption",
 		"description": "Downloads a caption track. The caption track is returned in its original format unless the request specifies a value for the tfmt parameter and in its original language unless the request specifies a value for the tlang parameter.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -210,7 +210,7 @@
 		"name": "deleteCaption",
 		"description": "Deletes a specified caption track.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -233,7 +233,7 @@
 		"name": "createChannelBanners",
 		"description": "Upload a channel banner image to YouTube.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -256,7 +256,7 @@
 		"name": "getChannels",
 		"description": "Returns a collection of zero or more channel resources that match the request criteria.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}],
@@ -271,7 +271,7 @@
 		"name": "updateChannel",
 		"description": "Updates a channel's metadata.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -294,7 +294,7 @@
 		"name": "getChannelSections",
 		"description": "Returns a list of channelSection resources that match the API request criteria.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -333,7 +333,7 @@
 		"name": "createChannelSection",
 		"description": "Adds a channel section to the authenticated user's channel.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -364,7 +364,7 @@
 		"name": "updateChannelSection",
 		"description": "Updates a channel section.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -391,7 +391,7 @@
 		"name": "deleteChannelSection",
 		"description": "Deletes a channel section.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -414,7 +414,7 @@
 		"name": "getComments",
 		"description": "Returns a list of comments that match the API request parameters.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -453,7 +453,7 @@
 		"name": "replyToComment",
 		"description": "Creates a reply to an existing comment.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -476,7 +476,7 @@
 		"name": "updateComment",
 		"description": "Modifies a comment.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -499,7 +499,7 @@
 		"name": "markCommentsAsSpam",
 		"description": "Expresses the caller's opinion that one or more comments should be flagged as spam.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -518,7 +518,7 @@
 		"name": "setCommentsModerationStatus",
 		"description": "Sets the moderation status of one or more comments. The API request must be authorized by the owner of the channel or video associated with the comments.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -545,7 +545,7 @@
 		"name": "deleteComment",
 		"description": "Deletes a comment.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -564,7 +564,7 @@
 		"name": "getCommentThreads",
 		"description": "Returns a list of comment threads that match the API request parameters.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -623,7 +623,7 @@
 		"name": "createCommentThread",
 		"description": "Creates a new top-level comment.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -646,7 +646,7 @@
 		"name": "updateCommentThread",
 		"description": "Modifies the top-level comment in a comment thread.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -669,7 +669,7 @@
 		"name": "getGuideCategories",
 		"description": "Returns a list of categories that can be associated with YouTube channels.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -700,7 +700,7 @@
 		"name": "getApplicationLanguages",
 		"description": "Returns a list of application languages that the YouTube website supports.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -723,7 +723,7 @@
 		"name": "getContentRegions",
 		"description": "Returns a list of content regions that the YouTube website supports.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -746,7 +746,7 @@
 		"name": "getPlaylistItems",
 		"description": "Returns a collection of playlist items that match the API request parameters.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -789,7 +789,7 @@
 		"name": "createPlaylistItem",
 		"description": "Adds a resource to a playlist.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -816,7 +816,7 @@
 		"name": "updatePlaylistItem",
 		"description": "Modifies a playlist item. For example, you could update the item's position in the playlist.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -839,7 +839,7 @@
 		"name": "deletePlaylistItem",
 		"description": "Deletes a playlist.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -858,7 +858,7 @@
 		"name": "getPlaylists",
 		"description": "Returns a collection of playlists that match the API request parameters. For example, you can retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their unique IDs.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -905,7 +905,7 @@
 		"name": "createPlaylist",
 		"description": "Creates a playlist.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -936,7 +936,7 @@
 		"name": "updatePlaylist",
 		"description": "Modifies a playlist. For example, you could change a playlist's title, description, or privacy status.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -963,7 +963,7 @@
 		"name": "deletePlaylist",
 		"description": "Deletes a playlist.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -986,7 +986,7 @@
 		"name": "getSearchResults",
 		"description": "Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1117,7 +1117,7 @@
 		"name": "getSubscriptions",
 		"description": "Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1180,7 +1180,7 @@
 		"name": "addSubscription",
 		"description": "Adds a subscription for the authenticated user's channel.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1203,7 +1203,7 @@
 		"name": "deleteSubscription",
 		"description": "Deletes a subscription.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1222,7 +1222,7 @@
 		"name": "setThumbnail",
 		"description": "Uploads a custom video thumbnail to YouTube and sets it for a video.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1249,7 +1249,7 @@
 		"name": "getVideoAbuseReportReasons",
 		"description": "Retrieve a list of reasons that can be used to report abusive videos.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1272,7 +1272,7 @@
 		"name": "getVideoCategories",
 		"description": "Returns a list of categories that can be associated with YouTube videos.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1303,7 +1303,7 @@
 		"name": "setWatermark",
 		"description": "Uploads a watermark image to YouTube and sets it for a channel.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1330,7 +1330,7 @@
 		"name": "unsetWatermark",
 		"description": "Deletes a channel's watermark image.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1353,7 +1353,7 @@
 		"name": "getVideos",
 		"description": "Returns a list of videos that match the API request parameters.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1408,7 +1408,7 @@
 		"name": "uploadsVideo",
 		"description": "Uploads a video to YouTube and optionally sets the video's metadata.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1451,7 +1451,7 @@
 		"name": "updateVideo",
 		"description": "Updates a video's metadata.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1474,7 +1474,7 @@
 		"name": "rateVideo",
 		"description": "Add a like or dislike rating to a video or remove a rating from a video.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1497,7 +1497,7 @@
 		"name": "getVideosRating",
 		"description": "Retrieves the ratings that the authorized user gave to a list of specified videos.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1520,7 +1520,7 @@
 		"name": "createAbuseVideoContentReport",
 		"description": "Reports a video for containing abusive content.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
@@ -1559,7 +1559,7 @@
 		"name": "deleteVideo",
 		"description": "Deletes a YouTube video.",
 		"args": [{
-			"name": "apiKey",
+			"name": "accessToken",
 			"type": "credentials",
 			"info": "Required: Access token obtained from Google.com"
 		}, {
