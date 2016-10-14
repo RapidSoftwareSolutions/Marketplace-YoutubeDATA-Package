@@ -60,6 +60,20 @@
 			"info": "success"
 		}]
 	}, {
+
+        /*
+        {
+	        "snippet": {
+	            "description": "Activity API call"
+	        },
+	        "contentDetails": {
+	            "bulletin": {
+	                "resourceId": {
+	                    "channelId": "UCKfpjMinagvyf9cKHiBcmGw"
+	                }
+	            }
+	        }
+	    }*/
 		"name": "createActivity",
 		"description": "Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel's behalf.",
 		"args": [{
@@ -114,6 +128,18 @@
 			"info": "success"
 		}]
 	}, {
+		/*
+			{
+                "kind": "youtube#caption",
+                snippet: {
+                    "videoId": "hAZdovB2JaE",
+                    "language": "en",
+
+                    "name": "Test",
+                    ///"isDraft":true,
+                }
+            }
+		*/
 		"name": "createCaption",
 		"description": "Uploads a caption track.",
 		"args": [{
@@ -1208,7 +1234,7 @@
 			"info": "Required: Access token obtained from Google.com"
 		}, {
 			"name": "id",
-			"type": "string",
+			"type": "String",
 			"info": "The id parameter specifies the YouTube subscription ID for the resource that is being deleted. In a subscription resource, the id property specifies the YouTube subscription ID."
 		}],
 		"callbacks": [{
