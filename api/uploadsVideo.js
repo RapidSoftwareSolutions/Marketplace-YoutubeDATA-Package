@@ -6,71 +6,71 @@ const spawn   = require('child_process').spawnSync
 
 module.exports = (req, res, callback) => {
 
-	let { 
-		accessToken,
-		part,
-		file,
-		autoLevels,
-		notifySubscribers,
-		onBehalfOfContentOwner,
-		onBehalfOfContentOwnerChannel,
-		stabilize,
-		resource,
-		to="to" } = req.body.args;
+    let { 
+        accessToken,
+        part,
+        file,
+        autoLevels,
+        notifySubscribers,
+        onBehalfOfContentOwner,
+        onBehalfOfContentOwnerChannel,
+        stabilize,
+        resource,
+        to="to" } = req.body.args;
 
-	let r  = {
+    let r  = {
         callback     : "",
         contextWrites: {}
     };
 
-	if(!accessToken || !file) {
-		callback('Fill in required fields.', res, {to});
-    	return;
-	}
+    if(!accessToken || !file) {
+        callback('Fill in required fields.', res, {to});
+        return;
+    }
 
-	Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
+    Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-	if(resource)
-	try {
-		resource = JSON.parse(resource);
-	} catch (e) {
-		callback('Bad resource.', res, {to});
-		return;
-	}
+    if(resource)
+    try {
+        resource = JSON.parse(resource);
+    } catch (e) {
+        callback('Bad resource.', res, {to});
+        return;
+    }
 
-	let options = {
-		part,
-		autoLevels,
-		notifySubscribers,
-		onBehalfOfContentOwner,
-		onBehalfOfContentOwnerChannel,
-		stabilize,
-		resource,
-	}
+    let options = {
+        part,
+        autoLevels,
+        notifySubscribers,
+        onBehalfOfContentOwner,
+        onBehalfOfContentOwnerChannel,
+        stabilize,
+        resource,
+    }
 
-	let attach = spawn(process.execPath, [require.resolve('../lib/download.js'), file]);
-	
-	if(!attach.stderr.toString()) {
-		let response = JSON.parse(attach.stdout.toString());
-		var filename = path.resolve('./lib', response.message);
+    let attach = spawn(process.execPath, [require.resolve('../lib/download.js'), file]);
+    
+    if(!attach.stderr.toString()) {
+        let response = JSON.parse(attach.stdout.toString());
+        var filename = path.resolve('./lib', response.message);
 
-		if(!response.success) {
-			callback('Bad file!', res, {to});
-			return;
-		}
+        if(!response.success) {
+            callback('Bad file!', res, {to});
+            return;
+        }
 
-		options.media = {
-			mimeType: 'application/octet-stream',
-			body: fs.createReadStream(filename),
-		}
+        options.media = {
+            mimeType: 'application/octet-stream',
+            body: fs.createReadStream(filename),
+        }
 
-	} else {
-		console.log('Error with download.js!', attach.stderr.toString());
-	}
+    } else {
+        console.log('Error with download.js!', attach.stderr.toString());
+    }
 
-	options = lib.clearArgs(options);
+    options = lib.clearArgs(options);
 
-	Youtube.videos.insert(options, (err, result) => {
+    Youtube.videos.insert(options, (err, result) => {
         callback(err, res, {to, result});
         fs.unlink(filename);
     });

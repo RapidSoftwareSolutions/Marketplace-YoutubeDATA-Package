@@ -38,7 +38,7 @@ app.get(`/api/${PACKAGE_NAME}/token`, (req, res) => {
 */
 
 let callback = (err, res, r) => {
- 	let response = {
+    let response = {
         callback     : "",
         contextWrites: {}
     };
@@ -64,8 +64,8 @@ fs.readdirSync('api/').forEach((file) => {
        let fn = require(`./api/${file}`);
        app.all(`/api/${PACKAGE_NAME}/${route}`, function(req, res) {return fn(req, res, callback)});
     } catch(e) { 
-    	console.log(e);
-    	return; 
+        console.log(e);
+        return; 
     }
 });
 

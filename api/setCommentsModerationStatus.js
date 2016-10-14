@@ -3,34 +3,34 @@ const Youtube = require("youtube-api");
 
 module.exports = (req, res, callback) => {
 
-	let { 
-		accessToken,
-		id,
-		moderationStatus,
-		banAuthor,
-		to="to" } = req.body.args;
+    let { 
+        accessToken,
+        id,
+        moderationStatus,
+        banAuthor,
+        to="to" } = req.body.args;
 
-	let r  = {
+    let r  = {
         callback     : "",
         contextWrites: {},
     };
 
-	if(!accessToken || !id || !moderationStatus) {
-		callback('Fill in required fields.', res, {to});
-    	return;
-	}
+    if(!accessToken || !id || !moderationStatus) {
+        callback('Fill in required fields.', res, {to});
+        return;
+    }
 
-	Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
+    Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-	let options = {
-		id,
-		moderationStatus,
-		banAuthor,
-	}
+    let options = {
+        id,
+        moderationStatus,
+        banAuthor,
+    }
 
-	lib.clearArgs(options);
+    lib.clearArgs(options);
 
-	Youtube.comments.setModerationStatus(options, (err, result) => {
+    Youtube.comments.setModerationStatus(options, (err, result) => {
         callback(err, res, {to, result: "Success"});
     });
 }

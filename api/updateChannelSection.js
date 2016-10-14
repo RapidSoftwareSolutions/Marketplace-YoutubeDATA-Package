@@ -3,42 +3,42 @@ const Youtube = require("youtube-api");
 
 module.exports = (req, res, callback) => {
 
-	let { 
-		accessToken,
-		part,
-		resource,
-		onBehalfOfContentOwner,
-		to="to" } = req.body.args;
+    let { 
+        accessToken,
+        part,
+        resource,
+        onBehalfOfContentOwner,
+        to="to" } = req.body.args;
 
-	let r  = {
+    let r  = {
         callback     : "",
         contextWrites: {}
     };
 
-	if(!accessToken || !resource || !part) {
-		callback('Fill in required fields.', res, {to});
-    	return;
-	}
+    if(!accessToken || !resource || !part) {
+        callback('Fill in required fields.', res, {to});
+        return;
+    }
 
-	try {
-		resource = JSON.parse(resource);
-	} catch (e) {
-		callback('Bad resource.', res, {to});
-		return;
-	}
+    try {
+        resource = JSON.parse(resource);
+    } catch (e) {
+        callback('Bad resource.', res, {to});
+        return;
+    }
 
-	Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
+    Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-	let options = {
-		part,
-		resource,
-		onBehalfOfContentOwner
-	}
+    let options = {
+        part,
+        resource,
+        onBehalfOfContentOwner
+    }
 
-	lib.clearArgs(options);
+    lib.clearArgs(options);
 
-	Youtube.channelSections.insert(options, (err, result) => {
-		console.log(err, result)
+    Youtube.channelSections.insert(options, (err, result) => {
+        console.log(err, result)
         callback(err, res, {to, result});
     });
 }
