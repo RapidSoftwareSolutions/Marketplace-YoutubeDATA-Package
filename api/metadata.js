@@ -1,7 +1,6 @@
 module.exports.do = function(req, res){
     /* When sending GET request to api/Twitter, return the metadata of the package */
     res.status(200).send({
-<<<<<<< HEAD
     "package": "YoutubeDataApi",
     "tagline": "Youtube Data API",
     "description": "Add YouTube features to your application, including the ability to upload videos, create and manage playlists, and more.",
@@ -65,54 +64,6 @@ module.exports.do = function(req, res){
     }, {
 
         /*
-=======
-        'package': 'WitAI',
-        "tagline": "Wit.ai API Package",
-        "description": "Wit.ai makes it easy for developers to build applications and devices that you can talk or text to.",
-        'image': 'https://img.stackshare.io/service/767/Qe0MWT5x.png',
-        'repo': 'https://github.com/RapidSoftwareSolutions/marketplace-wit.ai-package',
-        'accounts': {
-            'domain': 'wit.ai',
-            'credentials': [
-                'accessToken',
-            ]
-        },
-        'blocks': [{
-            "name":"getSentenceMeaning",
-            "args":[
-                {
-                    name: "accessToken",
-                    type: "credentials",
-                    info: "The api key obtained from wit.ai.",
-                },
-                {
-                    name: "text",
-                    type: "String",
-                    info: "User’s query. Length must be > 0 and < 256",
-                },
-                {
-                    name: "textId",
-                    type: "String",
-                    info: "A specific Id you want to assign to the message that will be processed. If not set, Wit.ai will auto generate one for you"
-                },
-                {
-                    name: "threadId",
-                    type: "String",
-                    info: "A specific Id that will let you group requests per conversation"
-                },
-            ],
-            'callbacks':[
-                {
-                    'name':'error',
-                    'info': 'Error'
-                },
-                {
-                    'name':'success',
-                    'info': 'Success'
-                }
-            ]
-        },
->>>>>>> fd0ada3fce94a20242f7ac3ba00e7ecebb842d1d
         {
             "snippet": {
                 
