@@ -6,11 +6,8 @@ const express       = require('express'),
     fs              = require('fs');
 
 const PORT          = process.env.PORT || 8080;
-<<<<<<< HEAD
+
 global.PACKAGE_NAME = "Youtube";
-=======
-global.PACKAGE_NAME = "WitAI";
->>>>>>> fd0ada3fce94a20242f7ac3ba00e7ecebb842d1d
 
 const app = express();
 app.use(bodyParser.json(({limit: '50mb'})));
@@ -18,10 +15,8 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
 app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
 
 
-/** REMOVE THIS BLOCK ON PRODUCTION **/
-
-// ya29.Ci95A4B80uZuuaJNVYp99JTAAi86vmdWVVFItDx3SBjRiaiIptQtPJjz676tagmaeQ
-
+/*
+REMOVE THIS BLOCK ON PRODUCTION 
 app.get(`/api/${PACKAGE_NAME}/token`, (req, res) => {
     const Youtube = require("youtube-api")
 
@@ -40,8 +35,7 @@ app.get(`/api/${PACKAGE_NAME}/token`, (req, res) => {
         res.send(tokens);
     });
 });
-
-/** --- --- ---**/
+*/
 
 let callback = (err, res, r) => {
  	let response = {
