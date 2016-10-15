@@ -4,15 +4,14 @@ module.exports.do = function(req, res){
     "package": "YoutubeDataApi",
     "tagline": "Youtube Data API",
     "description": "Add YouTube features to your application, including the ability to upload videos, create and manage playlists, and more.",
-    "image": "http:\/\/logo.clearbit.com\/youtube.com",
-    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-YoutubeDATA-Package",
+    "image": "http://logo.clearbit.com/youtube.com",
+    "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YoutubeDATA-Package",
     "accounts": {
         "domain": "youtube.com",
         "String": ["accessToken"]
     },
     "blocks": [{
         "name": "getActivities",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -60,9 +59,9 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of channel activity events that match the request criteria. For example, you can retrieve events associated with a particular channel or with the user's own channel. "
     }, {
-
         /*
         {
             "snippet": {
@@ -77,7 +76,6 @@ module.exports.do = function(req, res){
             }
         }*/
         "name": "createActivity",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -97,10 +95,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Posts a bulletin for a specific channel. (The user submitting the request must be authorized to act on the channel's behalf."
     }, {
         "name": "getCaptions",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -128,9 +126,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Retrieve a list of caption tracks that are associated with a specified video. Note that the API response does not contain the actual captions and that the captions.download method provides the ability to retrieve a caption track. Try it now."
     }, {
-        /*
+         /*
             {
                 snippet: {
                     "videoId": "hAZdovB2JaE",
@@ -140,7 +139,6 @@ module.exports.do = function(req, res){
             }
         */
         "name": "createCaption",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -172,9 +170,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Uploads a caption track."
     }, {
-        /*
+         /*
             {
                 "id": "UIe3Zbwk7KKtPcz0iz18KtDJo_OpytE80jxAHg7CBoX0Cj - 6 ugayjw == ",
                 "snippet": {
@@ -214,10 +213,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Updates a caption track. When updating a caption track, you can change the track's draft status, upload a new caption file for the track, or both."
     }, {
         "name": "downloadCaption",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -245,10 +244,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Downloads a caption track. The caption track is returned in its original format unless the request specifies a value for the tfmt parameter and in its original language unless the request specifies a value for the tlang parameter."
     }, {
         "name": "deleteCaption",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -268,10 +267,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a specified caption track."
     }, {
         "name": "createChannelBanners",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -291,7 +290,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Upload a channel banner image to YouTube."
     }, {
         "name": "getChannels",
         "args": [{
@@ -341,7 +341,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a collection of zero or more channel resources that match the request criteria."
     }, {
         "name": "updateChannel",
         "args": [{
@@ -367,10 +368,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Updates a channel's metadata."
     }, {
         "name": "getChannelSections",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -406,14 +407,13 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of channelSection resources that match the API request criteria."
     }, {
         /*
             {   "snippet": {        "type": "allPlaylists",         "style": "horizontalRow"    } }
         */
-
         "name": "createChannelSection",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -441,10 +441,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Adds a channel section to the authenticated user's channel."
     }, {
         "name": "updateChannelSection",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -468,10 +468,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Updates a channel section."
     }, {
         "name": "deleteChannelSection",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -491,10 +491,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a channel section."
     }, {
         "name": "getComments",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -530,14 +530,13 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of comments that match the API request parameters."
     }, {
         /*
             {   "snippet": {        "textOriginal": "from api",         "parentId": "z12tijhiftqyjn4q404cif0jfvnzxbo5mr40k"    } }
         */
-
         "name": "replyToComment",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -557,16 +556,13 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Creates a reply to an existing comment."
     }, {
-
-         /*
+        /*
             {  "id": "z12tijhiftqyjn4q404cif0jfvnzxbo5mr40k.1476448035799735", "snippet": {        "textOriginal": "from api"   } }
         */
-
-
         "name": "updateComment",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -586,10 +582,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Modifies a comment."
     }, {
         "name": "markCommentsAsSpam",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -605,10 +601,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Expresses the caller's opinion that one or more comments should be flagged as spam."
     }, {
         "name": "setCommentsModerationStatus",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -632,10 +628,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Sets the moderation status of one or more comments. The API request must be authorized by the owner of the channel or video associated with the comments."
     }, {
         "name": "deleteComment",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -651,10 +647,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a comment."
     }, {
         "name": "getCommentThreads",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -710,9 +706,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of comment threads that match the API request parameters."
     }, {
-        /*
+         /*
         {  
             "snippet": {
                 "channelId": "UCKfpjMinagvyf9cKHiBcmGw",        
@@ -745,7 +742,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Creates a new top-level comment."
     }, {
         /*
         {  
@@ -761,9 +759,7 @@ module.exports.do = function(req, res){
 
         }
         */
-
         "name": "updateCommentThread",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -783,10 +779,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Modifies the top-level comment in a comment thread."
     }, {
         "name": "getGuideCategories",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -814,10 +810,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of categories that can be associated with YouTube channels."
     }, {
         "name": "getApplicationLanguages",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -837,7 +833,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of application languages that the YouTube website supports."
     }, {
         "name": "getContentRegions",
         "args": [{
@@ -859,10 +856,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of content regions that the YouTube website supports."
     }, {
         "name": "getPlaylistItems",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -902,10 +899,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a collection of playlist items that match the API request parameters."
     }, {
-
-        /*
+         /*
         {  
             "id": "z12tijhiftqyjn4q404cif0jfvnzxbo5mr40k",
             "snippet": {
@@ -920,7 +917,6 @@ module.exports.do = function(req, res){
         */
 
         "name": "createPlaylistItem",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -944,10 +940,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Adds a resource to a playlist."
     }, {
         "name": "updatePlaylistItem",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -967,10 +963,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Modifies a playlist item. For example, you could update the item's position in the playlist."
     }, {
         "name": "deletePlaylistItem",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -986,10 +982,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a playlist."
     }, {
         "name": "getPlaylists",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1033,10 +1029,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a collection of playlists that match the API request parameters. For example, you can retrieve all playlists that the authenticated user owns, or you can retrieve one or more playlists by their unique IDs."
     }, {
         "name": "createPlaylist",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1064,10 +1060,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Creates a playlist."
     }, {
         "name": "updatePlaylist",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1091,10 +1087,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Modifies a playlist. For example, you could change a playlist's title, description, or privacy status."
     }, {
         "name": "deletePlaylist",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1114,10 +1110,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a playlist."
     }, {
         "name": "getSearchResults",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1245,10 +1241,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource."
     }, {
         "name": "getSubscriptions",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1308,7 +1304,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a collection of search results that match the query parameters specified in the API request. By default, a search result set identifies matching video, channel, and playlist resources, but you can also configure queries to only retrieve a specific type of resource."
     }, {
         /*
         {
@@ -1320,9 +1317,7 @@ module.exports.do = function(req, res){
             }
         }
         */
-
         "name": "addSubscription",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1342,10 +1337,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Adds a subscription for the authenticated user's channel."
     }, {
         "name": "deleteSubscription",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1361,10 +1356,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a subscription."
     }, {
         "name": "setThumbnail",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1388,10 +1383,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Uploads a custom video thumbnail to YouTube and sets it for a video."
     }, {
         "name": "getVideoAbuseReportReasons",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1411,10 +1406,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Retrieve a list of reasons that can be used to report abusive videos."
     }, {
         "name": "getVideoCategories",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1442,9 +1437,9 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of categories that can be associated with YouTube videos."
     }, {
-
         /*
             {
               "timing": {
@@ -1460,9 +1455,7 @@ module.exports.do = function(req, res){
               "imageBytes": "2048",
             }
         */
-
         "name": "setWatermark",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1490,10 +1483,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Uploads a watermark image to YouTube and sets it for a channel."
     }, {
         "name": "unsetWatermark",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1513,10 +1506,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a channel's watermark image."
     }, {
         "name": "getVideos",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1568,7 +1561,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Returns a list of videos that match the API request parameters."
     }, {
         "name": "uploadsVideo",
         "args": [{
@@ -1614,10 +1608,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Uploads a video to YouTube and optionally sets the video's metadata."
     }, {
         "name": "updateVideo",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1637,10 +1631,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Updates a video's metadata."
     }, {
         "name": "rateVideo",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1660,10 +1654,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Add a like or dislike rating to a video or remove a rating from a video."
     }, {
         "name": "getVideosRating",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1683,10 +1677,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Retrieves the ratings that the authorized user gave to a list of specified videos."
     }, {
         "name": "createAbuseVideoContentReport",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1722,10 +1716,10 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Reports a video for containing abusive content."
     }, {
         "name": "deleteVideo",
-        
         "args": [{
             "name": "accessToken",
             "type": "String",
@@ -1745,7 +1739,8 @@ module.exports.do = function(req, res){
         }, {
             "name": "success",
             "info": "success"
-        }]
+        }],
+        "description": "Deletes a YouTube video."
     }]
 })
 };
