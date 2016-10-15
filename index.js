@@ -15,8 +15,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
 app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
 
 
-/*
-REMOVE THIS BLOCK ON PRODUCTION 
+//REMOVE THIS BLOCK ON PRODUCTION 
 app.get(`/api/${PACKAGE_NAME}/token`, (req, res) => {
     const Youtube = require("youtube-api")
 
@@ -35,7 +34,6 @@ app.get(`/api/${PACKAGE_NAME}/token`, (req, res) => {
         res.send(tokens);
     });
 });
-*/
 
 let callback = (err, res, r) => {
     let response = {

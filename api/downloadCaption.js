@@ -31,6 +31,8 @@ module.exports = (req, res, callback) => {
     });
 
     Youtube.captions.download(options, (err, result) => {
+        // captions is text-format files
+        // return it as is
         callback(err, res, {to, result});
     });
 }
