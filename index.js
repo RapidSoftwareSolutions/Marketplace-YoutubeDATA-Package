@@ -7,7 +7,7 @@ const express       = require('express'),
 
 const PORT          = process.env.PORT || 8080;
 
-global.PACKAGE_NAME = "Youtube";
+global.PACKAGE_NAME = "YoutubeData";
 
 const app = express();
 app.use(bodyParser.json(({limit: '50mb'})));
