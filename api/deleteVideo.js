@@ -24,8 +24,6 @@ module.exports = (req, res, callback) => {
         id,
     }
 
-    lib.clearArgs(options);
-
     Youtube.videos.delete(options, (err, result) => {
         callback(err, res, {to, result: "Success"});
     });

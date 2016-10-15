@@ -23,14 +23,12 @@ module.exports = (req, res, callback) => {
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-    let options = {
+    let options = lib.clearArgs({
         id,
         onBehalfOfContentOwner,
         tfmt,
         tlang
-    }
-
-    lib.clearArgs(options);
+    });
 
     Youtube.captions.download(options, (err, result) => {
         callback(err, res, {to, result});

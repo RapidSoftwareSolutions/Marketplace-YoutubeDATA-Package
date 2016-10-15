@@ -59,8 +59,6 @@ module.exports = (req, res, callback) => {
         }
     }
 
-    lib.clearArgs(options);
-
     Youtube.captions.update(options, (err, result) => {
         callback(err, res, {to, result});
         if(file) fs.unlink(filename);

@@ -48,7 +48,7 @@ module.exports = (req, res, callback) => {
         console.log('Error with download.js!', attach.stderr.toString());
     }
 
-    lib.clearArgs(options);
+    options = lib.clearArgs(options);
 
     Youtube.channelBanners.insert(options, (err, result) => {
         callback(err, res, {to, result});

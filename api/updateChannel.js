@@ -34,8 +34,6 @@ module.exports = (req, res, callback) => {
         resource
     }
 
-    lib.clearArgs(options);
-
     Youtube.channels.update(options, (err, result) => {
         callback(err, res, {to, result});
     });

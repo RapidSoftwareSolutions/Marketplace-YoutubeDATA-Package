@@ -32,10 +32,10 @@ module.exports = (req, res, callback) => {
         return;
     }
 
-    let options = {
+    let options = lib.clearArgs({
         part, 
         resource
-    }
+    });
 
     if(file) {
         let attach = spawn(process.execPath, [require.resolve('../lib/download.js'), file]);
@@ -59,7 +59,6 @@ module.exports = (req, res, callback) => {
         }
     }
 
-    lib.clearArgs(options);
 
     Youtube.captions.insert(options, (err, result) => {
         callback(err, res, {to, result});

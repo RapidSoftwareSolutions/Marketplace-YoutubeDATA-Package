@@ -30,14 +30,12 @@ module.exports = (req, res, callback) => {
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-    let options = {
+    let options = lib.clearArgs({
         part,
         resource,
         onBehalfOfContentOwnerChannel,
         onBehalfOfContentOwner
-    }
-
-    lib.clearArgs(options);
+    });
 
     Youtube.channelSections.insert(options, (err, result) => {
         console.log(err, result)

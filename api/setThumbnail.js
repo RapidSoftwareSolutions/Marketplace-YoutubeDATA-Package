@@ -52,8 +52,6 @@ module.exports = (req, res, callback) => {
         }
     }
 
-    lib.clearArgs(options);
-
     Youtube.thumbnails.set(options, (err, result) => {
         callback(err, res, {to, result});
         if(image) fs.unlink(filename);

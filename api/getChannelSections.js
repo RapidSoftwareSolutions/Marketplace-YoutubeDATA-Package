@@ -25,16 +25,14 @@ module.exports = (req, res, callback) => {
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-    let options = {
+    let options = lib.clearArgs({
         part,
         channelId,
         id,
         mine,
         hl,
         onBehalfOfContentOwner,
-    }
-
-    lib.clearArgs(options);
+    });
 
     Youtube.channelSections.list(options, (err, result) => {
         callback(err, res, {to, result});

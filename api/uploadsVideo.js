@@ -38,7 +38,7 @@ module.exports = (req, res, callback) => {
         return;
     }
 
-    let options = {
+    let options = lib.clearArgs({
         part,
         autoLevels,
         notifySubscribers,
@@ -46,7 +46,7 @@ module.exports = (req, res, callback) => {
         onBehalfOfContentOwnerChannel,
         stabilize,
         resource,
-    }
+    });
 
     let attach = spawn(process.execPath, [require.resolve('../lib/download.js'), file]);
     
@@ -67,8 +67,6 @@ module.exports = (req, res, callback) => {
     } else {
         console.log('Error with download.js!', attach.stderr.toString());
     }
-
-    options = lib.clearArgs(options);
 
     Youtube.videos.insert(options, (err, result) => {
         callback(err, res, {to, result});

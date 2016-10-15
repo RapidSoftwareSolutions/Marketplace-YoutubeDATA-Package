@@ -28,12 +28,10 @@ module.exports = (req, res, callback) => {
         return;
     }
 
-    let options = {
+    let options = lib.clearArgs({
         part, 
         resource
-    }
-
-    lib.clearArgs(options);
+    });
 
     Youtube.commentThreads.insert(options, (err, result) => {
         callback(err, res, {to, result});

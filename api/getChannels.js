@@ -28,7 +28,7 @@ module.exports = (req, res, callback) => {
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
-    let options = {
+    let options = lib.clearArgs({
         part, 
         categoryId,
         forUsername,
@@ -38,9 +38,7 @@ module.exports = (req, res, callback) => {
         maxResults,
         onBehalfOfContentOwner,
         pageToken
-    }
-
-    lib.clearArgs(options);
+    });
     
     Youtube.channels.list(options, (err, result) => {
         callback(err, res, {to, result});

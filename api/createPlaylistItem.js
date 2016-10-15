@@ -28,13 +28,11 @@ module.exports = (req, res, callback) => {
         return;
     }
 
-    let options = {
+    let options = lib.clearArgs({
         part, 
         resource,
         onBehalfOfContentOwner,
-    }
-
-    lib.clearArgs(options);
+    });
 
     Youtube.playlistItems.insert(options, (err, result) => {
         callback(err, res, {to, result});

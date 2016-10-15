@@ -33,8 +33,6 @@ module.exports = (req, res, callback) => {
         resource
     }
 
-    lib.clearArgs(options);
-
     Youtube.commentThreads.update(options, (err, result) => {
         callback(err, res, {to, result});
     });
