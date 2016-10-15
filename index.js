@@ -14,27 +14,6 @@ app.use(bodyParser.json(({limit: '50mb'})));
 app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
 app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
 
-
-//REMOVE THIS BLOCK ON PRODUCTION 
-app.get(`/api/${PACKAGE_NAME}/token`, (req, res) => {
-    const Youtube = require("youtube-api")
-
-    let oauth = Youtube.authenticate({
-        type: "oauth",
-        client_id: '316420278333-hggdlnmh1hvu546503job54tie3lq85b.apps.googleusercontent.com',
-        client_secret: 'hFytWP229DKRL00Qz25FYv-i',
-        redirect_url: 'http://localhost:8080/api/Youtube/token'
-    });
-
-    console.log(req.query.code)
-
-    oauth.getToken(req.query.code, (err, tokens) => {
-        console.log(err)
-        console.log(tokens);
-        res.send(tokens);
-    });
-});
-
 let callback = (err, res, r) => {
     let response = {
         callback     : "",
