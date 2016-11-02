@@ -8,13 +8,13 @@ module.exports.do = function(req, res){
     "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YoutubeDATA-Package",
     "accounts": {
         "domain": "youtube.com",
-        "String": ["accessToken"]
+        "credentials": ["accessToken"]
     },
     "blocks": [{
         "name": "getActivities",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -78,7 +78,7 @@ module.exports.do = function(req, res){
         "name": "createActivity",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -101,7 +101,7 @@ module.exports.do = function(req, res){
         "name": "getCaptions",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -141,7 +141,7 @@ module.exports.do = function(req, res){
         "name": "createCaption",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -184,7 +184,7 @@ module.exports.do = function(req, res){
         "name": "updateCaption",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -219,7 +219,7 @@ module.exports.do = function(req, res){
         "name": "downloadCaption",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -250,7 +250,7 @@ module.exports.do = function(req, res){
         "name": "deleteCaption",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -273,7 +273,7 @@ module.exports.do = function(req, res){
         "name": "createChannelBanners",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "image",
@@ -296,7 +296,7 @@ module.exports.do = function(req, res){
         "name": "getChannels",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -347,7 +347,7 @@ module.exports.do = function(req, res){
         "name": "updateChannel",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -374,7 +374,7 @@ module.exports.do = function(req, res){
         "name": "getChannelSections",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -416,7 +416,7 @@ module.exports.do = function(req, res){
         "name": "createChannelSection",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -447,7 +447,7 @@ module.exports.do = function(req, res){
         "name": "updateChannelSection",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -474,7 +474,7 @@ module.exports.do = function(req, res){
         "name": "deleteChannelSection",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -497,7 +497,7 @@ module.exports.do = function(req, res){
         "name": "getComments",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -539,7 +539,7 @@ module.exports.do = function(req, res){
         "name": "replyToComment",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -565,7 +565,7 @@ module.exports.do = function(req, res){
         "name": "updateComment",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -588,7 +588,7 @@ module.exports.do = function(req, res){
         "name": "markCommentsAsSpam",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -607,7 +607,7 @@ module.exports.do = function(req, res){
         "name": "setCommentsModerationStatus",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -634,7 +634,7 @@ module.exports.do = function(req, res){
         "name": "deleteComment",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -653,7 +653,7 @@ module.exports.do = function(req, res){
         "name": "getCommentThreads",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -725,7 +725,7 @@ module.exports.do = function(req, res){
         "name": "createCommentThread",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -762,7 +762,7 @@ module.exports.do = function(req, res){
         "name": "updateCommentThread",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -785,7 +785,7 @@ module.exports.do = function(req, res){
         "name": "getGuideCategories",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -816,7 +816,7 @@ module.exports.do = function(req, res){
         "name": "getApplicationLanguages",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -839,7 +839,7 @@ module.exports.do = function(req, res){
         "name": "getContentRegions",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -862,7 +862,7 @@ module.exports.do = function(req, res){
         "name": "getPlaylistItems",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -919,7 +919,7 @@ module.exports.do = function(req, res){
         "name": "createPlaylistItem",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -946,7 +946,7 @@ module.exports.do = function(req, res){
         "name": "updatePlaylistItem",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -969,7 +969,7 @@ module.exports.do = function(req, res){
         "name": "deletePlaylistItem",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -988,7 +988,7 @@ module.exports.do = function(req, res){
         "name": "getPlaylists",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1035,7 +1035,7 @@ module.exports.do = function(req, res){
         "name": "createPlaylist",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1066,7 +1066,7 @@ module.exports.do = function(req, res){
         "name": "updatePlaylist",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1093,7 +1093,7 @@ module.exports.do = function(req, res){
         "name": "deletePlaylist",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -1116,7 +1116,7 @@ module.exports.do = function(req, res){
         "name": "getSearchResults",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1247,7 +1247,7 @@ module.exports.do = function(req, res){
         "name": "getSubscriptions",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1320,7 +1320,7 @@ module.exports.do = function(req, res){
         "name": "addSubscription",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1343,7 +1343,7 @@ module.exports.do = function(req, res){
         "name": "deleteSubscription",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -1362,7 +1362,7 @@ module.exports.do = function(req, res){
         "name": "setThumbnail",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "videoId",
@@ -1389,7 +1389,7 @@ module.exports.do = function(req, res){
         "name": "getVideoAbuseReportReasons",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1412,7 +1412,7 @@ module.exports.do = function(req, res){
         "name": "getVideoCategories",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1458,7 +1458,7 @@ module.exports.do = function(req, res){
         "name": "setWatermark",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "channelId",
@@ -1489,7 +1489,7 @@ module.exports.do = function(req, res){
         "name": "unsetWatermark",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "onBehalfOfContentOwner",
@@ -1512,7 +1512,7 @@ module.exports.do = function(req, res){
         "name": "getVideos",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1567,7 +1567,7 @@ module.exports.do = function(req, res){
         "name": "uploadsVideo",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1614,7 +1614,7 @@ module.exports.do = function(req, res){
         "name": "updateVideo",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "part",
@@ -1637,7 +1637,7 @@ module.exports.do = function(req, res){
         "name": "rateVideo",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -1660,7 +1660,7 @@ module.exports.do = function(req, res){
         "name": "getVideosRating",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
@@ -1683,7 +1683,7 @@ module.exports.do = function(req, res){
         "name": "createAbuseVideoContentReport",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "videoId",
@@ -1722,7 +1722,7 @@ module.exports.do = function(req, res){
         "name": "deleteVideo",
         "args": [{
             "name": "accessToken",
-            "type": "String",
+            "type": "credentials",
             "info": "Required: Access token obtained from Google.com"
         }, {
             "name": "id",
