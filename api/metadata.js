@@ -4,7 +4,7 @@ module.exports.do = function(req, res){
     "package": "YoutubeDataApi",
     "tagline": "Youtube Data API",
     "description": "Add YouTube features to your application, including the ability to upload videos, create and manage playlists, and more.",
-    "image": "http://logo.clearbit.com/youtube.com",
+    "image": "https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png",
     "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-YoutubeDATA-Package",
     "accounts": {
         "domain": "youtube.com",
