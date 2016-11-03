@@ -32,7 +32,7 @@ module.exports = (req, res, callback) => {
     let options = lib.clearArgs({
         accessToken,
         part,
-        home: true,
+        home,
         channelId,
         mine,
         maxResults,
