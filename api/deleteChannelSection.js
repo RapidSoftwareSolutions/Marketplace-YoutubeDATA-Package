@@ -15,7 +15,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !id) {
-        callback('Fill in required fields.', res, {to});
+        callback('Fill in required fields: accessToken, id.', res, {to});
         return;
     }
 

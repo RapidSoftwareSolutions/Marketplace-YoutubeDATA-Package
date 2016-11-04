@@ -19,7 +19,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !videoId || !reasonId) {
-        callback('Fill in required fields.', res, {to});
+        callback('Fill in required fields: accessToken, videoId, reasonId.', res, {to});
         return;
     }
 

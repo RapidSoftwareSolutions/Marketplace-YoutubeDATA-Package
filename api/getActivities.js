@@ -7,6 +7,7 @@ module.exports = (req, res, callback) => {
     let { 
         accessToken,
         part,
+        home,
         channelId,
         mine,
         maxResults,
@@ -21,7 +22,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !(channelId || mine) || !part) {
-        callback('Fill in required fields.', res, {to});
+        callback('Fill in required fields: accessToken, (channelId or mine), part.', res, {to});
         return;
     }
 

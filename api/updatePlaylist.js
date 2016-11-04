@@ -15,7 +15,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !resource || !part) {
-        callback('Fill in required fields.', res, {to});
+        callback('Fill in required fields: accessToken, resource, part.', res, {to});
         return;
     }
 
