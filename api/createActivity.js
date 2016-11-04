@@ -36,7 +36,7 @@ module.exports = (req, res, callback) => {
         part, resource, onBehalfOfContentOwner, sync
     });
 
-    Youtube.captions.insert(options, (err, result) => {
+    Youtube.activities.insert(options, (err, result) => {
         callback(err, res, {to, result});
     });
 }
