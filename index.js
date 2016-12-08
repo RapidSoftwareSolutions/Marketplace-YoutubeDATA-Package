@@ -14,18 +14,20 @@ app.use(bodyParser.json(({limit: '50mb'})));
 app.use(bodyParser.urlencoded({limit: '50mb', extended:true}));
 app.all(`/api/${PACKAGE_NAME}`, require('./api/metadata.js').do);
 
-let callback = (err, res, r) => {
+let callback = (e, res, r) => {
     let response = {
         callback     : "",
         contextWrites: {}
     };
         
-    if(err) {
+    if(e) {
+        // foramt fix
+        // todo
         response.callback = 'error';
-        response.contextWrites[r.to] = typeof err == 'object' ? JSON.stringify(err) : err;
+        response.contextWrites['to'] = e.status_code ? e : { status_code: "API_ERROR", status_msg:  e.message ? e.message : e };
     } else {
         response.callback = 'success';
-        response.contextWrites[r.to] = typeof r.result == 'object' ? JSON.stringify(r.result) : r.result;
+        response.contextWrites['to'] = r.result
     }
 
     res.status(200).send(response);

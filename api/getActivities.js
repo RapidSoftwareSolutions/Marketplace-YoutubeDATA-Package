@@ -22,7 +22,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !(channelId || mine) || !part) {
-        callback('Fill in required fields: accessToken, (channelId or mine), part.', res, {to});
+        callback(lib.reqError({accessToken, channelId, part}), res, {to});
         return;
     }
 

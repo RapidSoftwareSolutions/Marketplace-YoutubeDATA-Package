@@ -20,14 +20,14 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !image || !channelId) {
-        callback('Fill in required fields: accessToken, image, channelId.', res, {to});
+        callback(lib.reqError({accessToken, image, channelId}), res, {to})
         return;
     }
 
     try {
         resource = JSON.parse(resource);
     } catch (e) {
-        callback('Bad resource.', res, {to});
+        callback(lib.parseError('resource'), res, {to});
         return;
     }
 

@@ -16,16 +16,16 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !part) {
-        callback('Fill in required fields: accessToken, part', res, {to});
+        callback(lib.reqError({accessToken, part}), res, {to});
         return;
     }
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
     try {
-        resource = JSON.parse(resource);
+        if(typeof resource == 'string') resource = JSON.parse(resource);
     } catch (e) {
-        callback('Bad resource.', res, {to})
+        callback(lib.parseError('resource'), res, {to});
     }
 
     let options = lib.clearArgs({

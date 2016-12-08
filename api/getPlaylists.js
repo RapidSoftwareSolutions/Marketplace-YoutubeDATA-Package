@@ -22,7 +22,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !part) {
-        callback('Fill in required fields: accessToken, part.', res, {to});
+        callback(lib.reqError({accessToken, part}), res, {to});
         return;
     }
 

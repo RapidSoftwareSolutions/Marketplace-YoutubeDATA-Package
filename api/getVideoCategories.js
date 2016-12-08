@@ -18,7 +18,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken) {
-        callback('Fill in required fields: accessToken', res, {to});
+        callback(lib.reqError({accessToken, part}), res, {to});
         return;
     }
 

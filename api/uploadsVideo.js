@@ -24,7 +24,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !file) {
-        callback('Fill in required fields: accessToken, file.', res, {to});
+        callback(lib.reqError({accessToken, resource, part}), res, {to});
         return;
     }
 
@@ -32,9 +32,9 @@ module.exports = (req, res, callback) => {
 
     if(resource)
     try {
-        resource = JSON.parse(resource);
+        if(typeof resource == 'string') resource = JSON.parse(resource);
     } catch (e) {
-        callback('Bad resource.', res, {to});
+        callback(lib.parseError('resource'), res, {to});
         return;
     }
 

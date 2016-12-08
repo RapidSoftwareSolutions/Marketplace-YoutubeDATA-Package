@@ -15,7 +15,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !channelId) {
-        callback('Fill in required fields: accessToken, channelId.', res, {to});
+        callback(lib.reqError({accessToken, channelId}), res, {to})
         return;
     }
 

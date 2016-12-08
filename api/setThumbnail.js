@@ -19,7 +19,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !image || !videoId) {
-        callback('Fill in required fields: accessToken, image, videoId.', res, {to});
+        callback(lib.reqError({accessToken, image, videoId}), res, {to})
         return;
     }
 

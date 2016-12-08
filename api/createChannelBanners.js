@@ -18,7 +18,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !image) {
-        callback('Fill in required fields: accessToken, image.', res, {to});
+        callback(lib.reqError({accessToken, image}), res, {to});
         return;
     }
 

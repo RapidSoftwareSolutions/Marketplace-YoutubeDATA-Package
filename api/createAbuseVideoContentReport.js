@@ -19,7 +19,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !videoId || !reasonId) {
-        callback('Fill in required fields: accessToken, videoId, reasonId.', res, {to});
+        callback(lib.reqError({accessToken, videoId, reasonId}), res, {to});
         return;
     }
 
@@ -34,7 +34,6 @@ module.exports = (req, res, callback) => {
         onBehalfOfContentOwner,
     });
 
-    console.log(options);
     Youtube.videos.reportAbuse({resource: options}, (err, result) => {
         callback(err, res, {to, result:"Success"});
     });

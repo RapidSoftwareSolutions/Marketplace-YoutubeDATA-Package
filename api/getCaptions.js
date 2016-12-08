@@ -18,7 +18,7 @@ module.exports = (req, res, callback) => {
     };
 
     if(!accessToken || !videoId || !part) {
-        callback('Fill in required fields: accessToken, videoId, part.', res, {to});
+        callback(lib.reqError({accessToken, part, videoId}), res, {to});
         return;
     }
 
