@@ -1,4 +1,6 @@
-# YoutubeDataApi Package
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/YoutubeData/functions?utm_source=RapidAPIGitHub_YouTubeFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
+# YouTubeDataApi Package
 Add YouTube features to your application, including the ability to upload videos, create and manage playlists, and more.
 * Domain: youtube.com
 * Credentials: accessToken
