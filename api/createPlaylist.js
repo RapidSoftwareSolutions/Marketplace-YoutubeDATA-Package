@@ -1,8 +1,10 @@
 const lib     = require('../lib/functions');
 const Youtube = require("youtube-api");
+const util = require('util');
+
 module.exports = (req, res, callback) => {
 
-    let { 
+    let {
         accessToken,
         part,
         onBehalfOfContentOwner,
@@ -19,6 +21,17 @@ module.exports = (req, res, callback) => {
         callback(lib.reqError({accessToken, resource, part}), res, {to});
         return;
     }
+    function IsJsonString(str) {
+      try {
+        parsedString = JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+      return parsedString;
+    }
+
+    part = util.isArray(part) ? part.join() : part;
+    part = IsJsonString(part) ? IsJsonString(part).join() : part;
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
@@ -30,7 +43,7 @@ module.exports = (req, res, callback) => {
     }
 
     let options = lib.clearArgs({
-        part, 
+        part,
         resource,
         onBehalfOfContentOwner,
         onBehalfOfContentOwnerChannel

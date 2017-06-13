@@ -2,11 +2,12 @@ const lib     = require('../lib/functions');
 const Youtube = require("youtube-api");
 const fs      = require('fs');
 const path    = require('path');
-const spawn   = require('child_process').spawnSync
+const spawn   = require('child_process').spawnSync;
+const util = require('util');
 
 module.exports = (req, res, callback) => {
 
-    let { 
+    let {
         accessToken,
         resource,
         part,
@@ -18,10 +19,23 @@ module.exports = (req, res, callback) => {
         contextWrites: {}
     };
 
+
     if(!accessToken || !resource || !part) {
         callback(lib.reqError({accessToken, resource, part}), res, {to});
         return;
     }
+    function IsJsonString(str) {
+        try {
+          parsedString =   JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return parsedString;
+    }
+
+    part = util.isArray(part) ? part.join() : part;
+    part = IsJsonString(part)? IsJsonString(part).join() : part ;
+
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 
@@ -33,13 +47,13 @@ module.exports = (req, res, callback) => {
     }
 
     let options = lib.clearArgs({
-        part, 
+        part,
         resource
     });
 
     if(file) {
         let attach = spawn(process.execPath, [require.resolve('../lib/download.js'), file]);
-        
+
         if(!attach.stderr.toString()) {
             let response = JSON.parse(attach.stdout.toString());
             var filename = path.resolve('./lib', response.message);

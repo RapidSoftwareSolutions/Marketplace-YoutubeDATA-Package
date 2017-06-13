@@ -19,7 +19,7 @@ let callback = (e, res, r) => {
         callback     : "",
         contextWrites: {}
     };
-        
+
     if(e) {
         // foramt fix
         // todo
@@ -42,12 +42,11 @@ fs.readdirSync('api/').forEach((file) => {
 
        let fn = require(`./api/${file}`);
        app.all(`/api/${PACKAGE_NAME}/${route}`, function(req, res) {return fn(req, res, callback)});
-    } catch(e) { 
+    } catch(e) {
         console.log(e);
-        return; 
+        return;
     }
 });
 
 app.listen(PORT);
 module.exports = app;
-

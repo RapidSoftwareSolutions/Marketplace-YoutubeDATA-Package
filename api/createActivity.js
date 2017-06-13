@@ -1,10 +1,11 @@
 const lib     = require('../lib/functions');
-const Youtube = require("youtube-api")
+const Youtube = require("youtube-api");
+const util = require('util');
 
 module.exports = (req, res, callback) => {
     req.body.args = lib.clearArgs(req.body.args, false);
 
-    let { 
+    let {
         accessToken,
         resource,
         part,
@@ -16,6 +17,18 @@ module.exports = (req, res, callback) => {
         callback     : "",
         contextWrites: {}
     };
+
+    function IsJsonString(str) {
+        try {
+          parsedString =   JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return parsedString;
+    }
+
+    part = util.isArray(part) ? part.join() : part;
+    part = IsJsonString(part)? IsJsonString(part).join() : part ;
 
     if(!accessToken || !resource || !part) {
         callback(lib.reqError({accessToken, resource, part}), res, {to});

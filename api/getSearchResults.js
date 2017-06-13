@@ -1,10 +1,14 @@
 const lib     = require('../lib/functions');
-const Youtube = require("youtube-api")
+const Youtube = require("youtube-api");
+const util = require('util');
+var datetime = require('node-datetime');
+
+
 
 module.exports = (req, res, callback) => {
     req.body.args = lib.clearArgs(req.body.args, false);
 
-    let { 
+    let {
         accessToken,
         part="snippet",
         forContentOwner,
@@ -36,7 +40,7 @@ module.exports = (req, res, callback) => {
         videoEmbeddable,
         videoLicense,
         videoSyndicated,
-        videoType,          
+        videoType,
         to="to" } = req.body.args;
 
     let r  = {
@@ -48,6 +52,22 @@ module.exports = (req, res, callback) => {
         callback(lib.reqError({accessToken}), res, {to});
         return;
     }
+    function IsJsonString(str) {
+      try {
+        parsedString = JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+      return parsedString;
+    }
+
+    part = util.isArray(part) ? part.join() : part;
+    part = IsJsonString(part) ? IsJsonString(part).join() : part;
+
+    let rawTime = datetime.create(publishedAfter);
+    publishedAfter = rawTime.format('Y-m-d\TH:M:S\Z');
+    let rawTime2 = datetime.create(publishedBefore);
+    publishedBefore = rawTime2.format('Y-m-d\TH:M:S\Z');
 
     Youtube.authenticate({type: "oauth"}).setCredentials({access_token: accessToken});
 

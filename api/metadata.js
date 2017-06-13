@@ -20,8 +20,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, snippet",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, snippet",
             "required": true
         }, {
             "name": "channelId",
@@ -50,12 +55,12 @@ module.exports.do = function(req, res){
             "required": false
         }, {
             "name": "publishedAfter",
-            "type": "String",
+            "type": "DatePicker",
             "info": "The publishedAfter parameter specifies the earliest date and time that an activity could have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be included in the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.",
             "required": false
         }, {
             "name": "publishedBefore",
-            "type": "String",
+            "type": "DatePicker",
             "info": "The publishedBefore parameter specifies the date and time before which an activity must have occurred for that activity to be included in the API response. If the parameter value specifies a day, but not a time, then any activities that occurred that day will be excluded from the result set. The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.",
             "required": false
         }, {
@@ -78,7 +83,7 @@ module.exports.do = function(req, res){
         /*
         {
             "snippet": {
-                
+
             },
             "contentDetails": {
                 "bulletin": {
@@ -96,8 +101,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, snippet",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, snippet",
             "required": true
         }, {
             "name": "resource",
@@ -124,8 +134,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
             "required": true
         }, {
             "name": "videoId",
@@ -171,8 +186,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -222,8 +242,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more activity resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -359,8 +384,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more channel resource properties that the API response will include. (`auditDetails`,`brandingSettings`,`contentDetails`,`contentOwnerDetails`,`id`,`invideoPromotion`,`localizations`,`snippet`,`statistics`,`status`,`topicDetails`)",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more channel resource properties that the API response will include. (`auditDetails`,`brandingSettings`,`contentDetails`,`contentOwnerDetails`,`id`,`invideoPromotion`,`localizations`,`snippet`,`statistics`,`status`,`topicDetails`)",
             "required": true
         }, {
             "name": "categoryId",
@@ -455,8 +485,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting",
             "required": true
         }, {
             "name": "channelId",
@@ -506,8 +541,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -544,8 +584,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more channelSection resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a channelSection resource, the snippet property contains other properties, such as a display title for the section. If you set part=snippet, the API response will also contain all of those nested properties.The following list contains the part names that you can include in the parameter value and the quota cost for each part: contentDetails, id, localizations, snippet, targeting",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -605,8 +650,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more comment resource properties that the API response will include. The list below contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more comment resource properties that the API response will include. The list below contains the part names that you can include in the parameter value and the quota cost for each part: id, snippet",
             "required": true
         }, {
             "name": "id",
@@ -630,7 +680,8 @@ module.exports.do = function(req, res){
             "required": false
         }, {
             "name": "textFormat",
-            "type": "String",
+            "type": "Select",
+            "options":["html", "plainText"],
             "info": "This parameter indicates whether the API should return comments formatted as HTML or as plain text. The default value is html. Acceptable values are:`html` – Returns the comments in HTML format. This is the default value. `plainText` – Returns the comments in plain text format.",
             "required": false
         }],
@@ -794,7 +845,12 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
             "info": "Required: The part parameter specifies a comma-separated list of one or more commentThread resource properties that the API response will include. The following list contains the part names that you can include in the parameter value and the quota cost for each part: id, replies, snippet",
             "required": true
         }, {
@@ -844,7 +900,8 @@ module.exports.do = function(req, res){
             "required": false
         }, {
             "name": "textFormat",
-            "type": "String",
+            "type": "Select",
+            "options":["html", "plainText"],
             "info": "Set this parameter's value to html or plainText to instruct the API to return the comments left by users in html formatted or in plain text. The default value is html. Acceptable values are: `html` – Returns the comments in HTML format. This is the default value. `plainText` – Returns the comments in plain text format.",
             "required": false
         }],
@@ -860,9 +917,9 @@ module.exports.do = function(req, res){
         "description": "Returns a list of comment threads that match the API request parameters."
     }, {
          /*
-        {  
+        {
             "snippet": {
-                "channelId": "UCKfpjMinagvyf9cKHiBcmGw",        
+                "channelId": "UCKfpjMinagvyf9cKHiBcmGw",
                 "topLevelComment": {
                     "snippet": {
                         "textOriginal": "Top level comment api call"
@@ -901,10 +958,10 @@ module.exports.do = function(req, res){
         "description": "Creates a new top-level comment."
     }, {
         /*
-        {  
+        {
             "id": "z12tijhiftqyjn4q404cif0jfvnzxbo5mr40k",
             "snippet": {
-                "channelId": "UCKfpjMinagvyf9cKHiBcmGw",        
+                "channelId": "UCKfpjMinagvyf9cKHiBcmGw",
                 "topLevelComment": {
                     "snippet": {
                         "textOriginal": "Top level comment api call"
@@ -1044,8 +1101,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`",
             "required": true
         }, {
             "name": "id",
@@ -1090,10 +1152,10 @@ module.exports.do = function(req, res){
         "description": "Returns a collection of playlist items that match the API request parameters."
     }, {
          /*
-        {  
+        {
             "id": "z12tijhiftqyjn4q404cif0jfvnzxbo5mr40k",
             "snippet": {
-                "playlistId": "PLchbjh4kWFjPRLTV7cYkz7XQ7Ofmi9x99",        
+                "playlistId": "PLchbjh4kWFjPRLTV7cYkz7XQ7Ofmi9x99",
                 "resourceId": {
                    "kind": "youtube#video",
                   "videoId": "hAZdovB2JaE"
@@ -1111,8 +1173,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more playlistItem resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlistItem resource, the snippet property contains numerous fields, including the title, description, position, and resourceId properties. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `status`",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -1195,8 +1262,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,",
             "required": true
         }, {
             "name": "channelId",
@@ -1253,8 +1325,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -1291,8 +1368,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more playlist resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a playlist resource, the snippet property contains properties like author, title, description, tags, and timeCreated. As such, if you set part=snippet, the API response will contain all of those properties. The list below contains the part names that you can include in the parameter value and the quota cost for  `contentDetails`,`id`, `localizations`, `player`, `snippet`, `status`,",
             "required": true
         }, {
             "name": "onBehalfOfContentOwner",
@@ -1352,8 +1434,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "The part parameter specifies a comma-separated list of one or more search resource properties that the API response will include. Set the parameter value to snippet.",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "The part parameter specifies an array of one or more search resource properties that the API response will include. Set the parameter value to snippet.",
             "required": false
         }, {
             "name": "forContentOwner",
@@ -1392,7 +1479,7 @@ module.exports.do = function(req, res){
             "required": false
         }, {
             "name": "location",
-            "type": "String",
+            "type": "Map",
             "info": "The location parameter, in conjunction with the locationRadius parameter, defines a circular geographic area and also restricts a search to videos that specify, in their metadata, a geographic location that falls within that area. The parameter value is a string that specifies latitude/longitude coordinates e.g. (37.42307,-122.08427).",
             "required": false
         }, {
@@ -1422,12 +1509,12 @@ module.exports.do = function(req, res){
             "required": false
         }, {
             "name": "publishedAfter",
-            "type": "String",
+            "type": "DatePicker",
             "info": "The publishedAfter parameter indicates that the API response should only contain resources created after the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).",
             "required": false
         }, {
             "name": "publishedBefore",
-            "type": "String",
+            "type": "DatePicker",
             "info": "The publishedBefore parameter indicates that the API response should only contain resources created before the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).",
             "required": false
         }, {
@@ -1515,8 +1602,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `subscriberSnippet`",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more subscription resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `subscriberSnippet`",
             "required": true
         }, {
             "name": "channelId",
@@ -1603,7 +1695,12 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
             "info": "Required: The part parameter specifies a comma-separated list of one or more subscription resource properties that the API response will include. If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a subscription resource, the snippet property contains other properties, such as a display title for the subscription. If you set part=snippet, the API response will also contain all of those nested properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`, `id`, `snippet`, `subscriberSnippet`",
             "required": true
         }, {
@@ -1834,8 +1931,13 @@ module.exports.do = function(req, res){
             "required": true
         }, {
             "name": "part",
-            "type": "String",
-            "info": "Required: The part parameter specifies a comma-separated list of one or more video resource properties that the API response will include.If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`,`fileDetails`,`id`,`liveStreamingDetails`,`localizations`,`player`,`processingDetails`,`recordingDetails`,`snippet`,`statistics`,`status`,`suggestions`,`topicDetails`",
+            "type": "List",
+            "structure":{
+              "name":"part",
+              "type": "String",
+              "info":"Single part"
+            },
+            "info": "Required: The part parameter specifies an array of one or more video resource properties that the API response will include.If the parameter identifies a property that contains child properties, the child properties will be included in the response. For example, in a video resource, the snippet property contains the channelId, title, description, tags, and categoryId properties. As such, if you set part=snippet, the API response will contain all of those properties. The following list contains the part names that you can include in the parameter value and the quota cost for each part: `contentDetails`,`fileDetails`,`id`,`liveStreamingDetails`,`localizations`,`player`,`processingDetails`,`recordingDetails`,`snippet`,`statistics`,`status`,`suggestions`,`topicDetails`",
             "required": true
         }, {
             "name": "chart",
